@@ -12,7 +12,7 @@ public class MainQLBH extends javax.swing.JFrame implements Runnable {
     public MainQLBH() {
         initComponents();
         setLocationRelativeTo(null);
-
+        System.out.println("Viet Nam");
         lblSoftwareName.setForeground(Color.GREEN);
         lbRunTiem.setForeground(Color.GREEN);
         setLocationRelativeTo(null);
