@@ -27,21 +27,21 @@ public class QLKhachHang extends javax.swing.JInternalFrame {
     int index;
 
     public QLKhachHang() {
-//        initComponents();
-//        setLocation(165, 30);
-//        ketNoi();
-//        System.out.println("Hoa Don " + lishd.size());
-//
-//        model = (DefaultTableModel) tableList.getModel();
-//        fillTotable();
-//
-//        System.out.println("Khachs Hanh " + listKH.size());
-//
-//        String delete_at = String.valueOf(java.time.LocalDate.now());
-//        String manv = Login.tenDangNhap;
-//
-//        System.out.println("Ngay h " + delete_at);
-//        System.out.println("Ma NV  " + manv);
+        initComponents();
+        setLocation(165, 30);
+        ketNoi();
+        System.out.println("Hoa Don " + lishd.size());
+
+        model = (DefaultTableModel) tableList.getModel();
+        fillTotable();
+
+        System.out.println("Khachs Hanh " + listKH.size());
+
+        String delete_at = String.valueOf(java.time.LocalDate.now());
+        String manv = Login.tenDangNhap;
+
+        System.out.println("Ngay h " + delete_at);
+        System.out.println("Ma NV  " + manv);
 
     }
 
@@ -58,30 +58,30 @@ public class QLKhachHang extends javax.swing.JInternalFrame {
 
     }
 
-//    private List<HoaDon> fillAllHD() {
-//        List<HoaDon> listKH = new ArrayList<>();
-//        try {
-//
-//            String sql = "select *from HOADON";
-//            Statement st = con.createStatement();
-//            ResultSet rs = st.executeQuery(sql);
-//
-//            while (rs.next()) {
-//                HoaDon kh = new HoaDon(
-//                        rs.getString("MaHoaDon"),
-//                        rs.getString("MaKH"),
-//                        rs.getString("MaNV"),
-//                        rs.getInt("TongTien"),
-//                        rs.getDate("NgayMuaHang"));
-//
-//                listKH.add(kh);
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//
-//        return listKH;
-//    }
+    private List<HoaDon> fillAllHD() {
+        List<HoaDon> listKH = new ArrayList<>();
+        try {
+
+            String sql = "select *from HOADON";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+                HoaDon kh = new HoaDon(
+                        rs.getString("MaHoaDon"),
+                        rs.getString("MaKH"),
+                        rs.getString("MaNV"),
+                        rs.getInt("TongTien"),
+                        rs.getDate("NgayMuaHang"));
+
+                listKH.add(kh);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return listKH;
+    }
     private boolean checkFrom() {
         if (txtMaKH.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Mã Khách Hàng Ko để Trống !");
