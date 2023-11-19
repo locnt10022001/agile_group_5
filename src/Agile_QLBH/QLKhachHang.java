@@ -29,6 +29,7 @@ public class QLKhachHang extends javax.swing.JInternalFrame {
     public QLKhachHang() {
         initComponents();
         setLocation(165, 30);
+        System.out.println("hello");
         ketNoi();
         System.out.println("Hoa Don " + lishd.size());
 
