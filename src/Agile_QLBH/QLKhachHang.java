@@ -27,22 +27,21 @@ public class QLKhachHang extends javax.swing.JInternalFrame {
     int index;
 
     public QLKhachHang() {
-        initComponents();
-        setLocation(165, 30);
-        ketNoi();
-//        lishd = fillAllHD();
-        System.out.println("Hoa Don " + lishd.size());
-
-        model = (DefaultTableModel) tableList.getModel();
-        fillTotable();
-
-        System.out.println("Khachs Hanh " + listKH.size());
-
-        String delete_at = String.valueOf(java.time.LocalDate.now());
-        String manv = Login.tenDangNhap;
-
-        System.out.println("Ngay h " + delete_at);
-        System.out.println("Ma NV  " + manv);
+//        initComponents();
+//        setLocation(165, 30);
+//        ketNoi();
+//        System.out.println("Hoa Don " + lishd.size());
+//
+//        model = (DefaultTableModel) tableList.getModel();
+//        fillTotable();
+//
+//        System.out.println("Khachs Hanh " + listKH.size());
+//
+//        String delete_at = String.valueOf(java.time.LocalDate.now());
+//        String manv = Login.tenDangNhap;
+//
+//        System.out.println("Ngay h " + delete_at);
+//        System.out.println("Ma NV  " + manv);
 
     }
 
