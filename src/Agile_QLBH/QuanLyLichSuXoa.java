@@ -31,19 +31,18 @@ public class QuanLyLichSuXoa extends javax.swing.JInternalFrame {
         filAllKH();
     }
     
-    public void ketNoi() {
+   public void ketNoi() {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             con = DriverManager.getConnection("jdbc:sqlserver://localhost\\DESKTOP-RPK6PAD\\SQLEXPRESS:1433;databaseName=QLBH102",
-                    "sa", "888888");
+                    "sa", "123");
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(this, "Ko tim thay driver tuong thich !");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "Ko tim thay driver tuong thich !");
         }
-        
+
     }
-    
     protected void fillAllSP() {
         try {
             String sql = "select * from SANPHAM where Delete_at is not null";

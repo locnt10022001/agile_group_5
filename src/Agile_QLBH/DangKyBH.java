@@ -35,7 +35,7 @@ public class DangKyBH extends javax.swing.JInternalFrame {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             con = DriverManager.getConnection("jdbc:sqlserver://localhost\\DESKTOP-RPK6PAD\\SQLEXPRESS:1433;databaseName=QLBH102",
-                    "sa", "888888");
+                    "sa", "123");
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(this, "Ko tim thay driver tuong thich !");
         } catch (SQLException ex) {

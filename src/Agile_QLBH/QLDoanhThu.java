@@ -31,11 +31,11 @@ public class QLDoanhThu extends javax.swing.JInternalFrame {
         System.out.println(listHD.size());
     }
 
-    public void ketNoi() {
+   public void ketNoi() {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             con = DriverManager.getConnection("jdbc:sqlserver://localhost\\DESKTOP-RPK6PAD\\SQLEXPRESS:1433;databaseName=QLBH102",
-                    "sa", "888888");
+                    "sa", "123");
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(this, "Ko tim thay driver tuong thich !");
         } catch (SQLException ex) {
@@ -43,7 +43,6 @@ public class QLDoanhThu extends javax.swing.JInternalFrame {
         }
 
     }
-
     private ArrayList<HoaDon> fetchList() {
         ArrayList<HoaDon> result = new ArrayList<>();
         String query = "select * from HOADON";

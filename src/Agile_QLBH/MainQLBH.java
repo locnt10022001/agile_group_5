@@ -12,7 +12,7 @@ public class MainQLBH extends javax.swing.JFrame implements Runnable {
     public MainQLBH() {
         initComponents();
         setLocationRelativeTo(null);
-        
+
         lblSoftwareName.setForeground(Color.GREEN);
         lbRunTiem.setForeground(Color.GREEN);
         setLocationRelativeTo(null);
@@ -24,7 +24,7 @@ public class MainQLBH extends javax.swing.JFrame implements Runnable {
         System.out.println("------- " + java.time.LocalDate.now() + " " + java.time.LocalTime.now());
         System.out.println("Ngay va gio : " + java.time.LocalDateTime.now());
         Start();
-
+        System.out.println("kết nối thành công");
     }
 
     private void Start() {
@@ -439,7 +439,7 @@ public class MainQLBH extends javax.swing.JFrame implements Runnable {
                 .addGroup(deskTopLayout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGap(267, 267, 267))
+                    .addGap(10, 10, 10))
             );
             deskTopLayout.setVerticalGroup(
                 deskTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
