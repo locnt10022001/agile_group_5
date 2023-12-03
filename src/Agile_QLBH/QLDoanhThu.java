@@ -34,8 +34,8 @@ public class QLDoanhThu extends javax.swing.JInternalFrame {
     public void ketNoi() {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            con = DriverManager.getConnection("jdbc:sqlserver://localhost\\DESKTOP-RPK6PAD\\SQLEXPRESS:1433;databaseName=QLBH102",
-                    "sa", "888888");
+            con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=QLBH102",
+                    "sa", "giang1999");
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(this, "Ko tim thay driver tuong thich !");
         } catch (SQLException ex) {
@@ -125,6 +125,8 @@ public class QLDoanhThu extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         btntim = new javax.swing.JButton();
+        cbotungay = new com.toedter.calendar.JDateChooser();
+        cbodenngay = new com.toedter.calendar.JDateChooser();
         jLabel4 = new javax.swing.JLabel();
         txttien = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -165,21 +167,35 @@ public class QLDoanhThu extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 355, Short.MAX_VALUE)
-                .addComponent(btntim, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(cbodenngay, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                        .addGap(493, 493, 493))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(cbotungay, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(108, 108, 108)
+                        .addComponent(btntim, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cbotungay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addComponent(cbodenngay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
+                        .addGap(6, 6, 6)
                         .addComponent(btntim, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
@@ -213,6 +229,12 @@ public class QLDoanhThu extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(txttien, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -220,17 +242,11 @@ public class QLDoanhThu extends javax.swing.JInternalFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(42, 42, 42)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 18, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txttien, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(25, 25, 25))
+                        .addGap(128, 128, 128)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,9 +255,9 @@ public class QLDoanhThu extends javax.swing.JInternalFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(46, 46, 46)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(txttien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -252,58 +268,60 @@ public class QLDoanhThu extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btntimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntimActionPerformed
-//        try {
-//            Date date, date1;
-//
-//            date = cbotungay.getDate();
-//            if (date == null) {
-//
-//                JOptionPane.showMessageDialog(null, "vui lòng chọn ngày bắt đầu", "Error", JOptionPane.ERROR_MESSAGE);
-//                cbotungay.grabFocus();
-//
-//                return;
-//            }
-//
-//            date1 = cbodenngay.getDate();
-//
-//            if (date1 == null) {
-//                JOptionPane.showMessageDialog(null, "vui lòng chọn ngày đến", "Error", JOptionPane.ERROR_MESSAGE);
-//                cbodenngay.grabFocus();
-//
-//                return;
-//            }
-//            Date ngayBatDau = new java.sql.Date(date.getTime());
-//            Date ngayketThuc = new java.sql.Date(date1.getTime());
-//            // Chỗ này coi như em tự query đc data theo ngày tháng
-//            String query = "SELECT * FROM HOADON WHERE NgayMuaHang BETWEEN ? AND ?";
-//            PreparedStatement ps = this.con.prepareStatement(query);
-//            ps.setDate(1, new java.sql.Date(ngayBatDau.getTime()));
-//            ps.setDate(2, new java.sql.Date(ngayketThuc.getTime()));
-//            ps.execute();
-//
-//            ResultSet res = ps.getResultSet();
-//            model.setRowCount(0);
-//            while (res.next()) {
-//                String MaHD = res.getString("MaHoaDon");
-//                String MaKH = res.getString("MaKH");
-//                String MaNV = res.getString("MaNV");
-//                Date ngay = res.getDate("NgayMuaHang");
-//                int tongtien = res.getInt("TongTien");
-//
-//                model.addRow(new Object[]{MaHD, MaKH, MaNV, ngay, tongtien});
-//
-//            }
-//
-//            tinhtien();
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        try {
+            Date date, date1;
+
+            date = cbotungay.getDate();
+            if (date == null) {
+
+                JOptionPane.showMessageDialog(null, "vui lòng chọn ngày bắt đầu", "Error", JOptionPane.ERROR_MESSAGE);
+                cbotungay.grabFocus();
+
+                return;
+            }
+
+            date1 = cbodenngay.getDate();
+
+            if (date1 == null) {
+                JOptionPane.showMessageDialog(null, "vui lòng chọn ngày đến", "Error", JOptionPane.ERROR_MESSAGE);
+                cbodenngay.grabFocus();
+
+                return;
+            }
+            Date ngayBatDau = new java.sql.Date(date.getTime());
+            Date ngayketThuc = new java.sql.Date(date1.getTime());
+            // Chỗ này coi như em tự query đc data theo ngày tháng
+            String query = "SELECT * FROM HOADON WHERE NgayMuaHang BETWEEN ? AND ?";
+            PreparedStatement ps = this.con.prepareStatement(query);
+            ps.setDate(1, new java.sql.Date(ngayBatDau.getTime()));
+            ps.setDate(2, new java.sql.Date(ngayketThuc.getTime()));
+            ps.execute();
+
+            ResultSet res = ps.getResultSet();
+            model.setRowCount(0);
+            while (res.next()) {
+                String MaHD = res.getString("MaHoaDon");
+                String MaKH = res.getString("MaKH");
+                String MaNV = res.getString("MaNV");
+                Date ngay = res.getDate("NgayMuaHang");
+                int tongtien = res.getInt("TongTien");
+
+                model.addRow(new Object[]{MaHD, MaKH, MaNV, ngay, tongtien});
+
+            }
+
+            tinhtien();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_btntimActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btntim;
+    private com.toedter.calendar.JDateChooser cbodenngay;
+    private com.toedter.calendar.JDateChooser cbotungay;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

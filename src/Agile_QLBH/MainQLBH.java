@@ -3,7 +3,11 @@ package Agile_QLBH;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class MainQLBH extends javax.swing.JFrame implements Runnable {
 
@@ -24,8 +28,8 @@ public class MainQLBH extends javax.swing.JFrame implements Runnable {
         System.out.println("------- " + java.time.LocalDate.now() + " " + java.time.LocalTime.now());
         System.out.println("Ngay va gio : " + java.time.LocalDateTime.now());
         Start();
-
     }
+
 
     private void Start() {
         try {
@@ -114,7 +118,7 @@ public class MainQLBH extends javax.swing.JFrame implements Runnable {
 
             lbRunTiem.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
             lbRunTiem.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-            lbRunTiem.setText("Cửa Hàng Số 1 Thế Giới : Đường 29 Hàm Nghi - Q. 5 Bà Trưng - TP. Hà Nội . Điện Thoại : 09001009 . Email : xamsidu.support@gmail.com");
+            lbRunTiem.setText("Cao đẳng FPT POLYTECHNIC Trịnh Văn Bô, Hà Nội");
 
             jPanel2.setBackground(new java.awt.Color(153, 204, 255));
             jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -362,7 +366,7 @@ public class MainQLBH extends javax.swing.JFrame implements Runnable {
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(lbRunTiem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap(121, Short.MAX_VALUE)
                     .addComponent(lblSoftwareName, javax.swing.GroupLayout.PREFERRED_SIZE, 820, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(120, 120, 120))
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -376,26 +380,18 @@ public class MainQLBH extends javax.swing.JFrame implements Runnable {
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(165, 165, 165)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(150, 150, 150))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap(787, Short.MAX_VALUE))))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(601, Short.MAX_VALUE)
-                        .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(351, 351, 351)))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(150, 150, 150))
             );
             jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -403,7 +399,9 @@ public class MainQLBH extends javax.swing.JFrame implements Runnable {
                     .addGap(51, 51, 51)
                     .addComponent(lblSoftwareName)
                     .addGap(30, 30, 30)
-                    .addComponent(jLabel19)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel19)
+                        .addComponent(jLabel21))
                     .addGap(18, 18, 18)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -423,11 +421,6 @@ public class MainQLBH extends javax.swing.JFrame implements Runnable {
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(30, 30, 30))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(jLabel21)
-                        .addContainerGap(490, Short.MAX_VALUE)))
             );
 
             deskTop.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -483,6 +476,11 @@ public class MainQLBH extends javax.swing.JFrame implements Runnable {
 
             menuThoatHT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imge/cross.png"))); // NOI18N
             menuThoatHT.setText("Thoát");
+            menuThoatHT.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    menuThoatHTActionPerformed(evt);
+                }
+            });
             menuThoat.add(menuThoatHT);
 
             jMenuBar1.add(menuThoat);
@@ -627,6 +625,10 @@ public class MainQLBH extends javax.swing.JFrame implements Runnable {
         deskTop.add(qlkh);
         qlkh.setVisible(true);
     }//GEN-LAST:event_menuKhachHangMouseClicked
+
+    private void menuThoatHTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuThoatHTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuThoatHTActionPerformed
 
     /**
      * @param args the command line arguments

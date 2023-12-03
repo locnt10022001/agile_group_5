@@ -26,8 +26,8 @@ public class SanPhamModify {
         }
 
         try {
-            con = DriverManager.getConnection("jdbc:sqlserver://localhost\\DESKTOP-RPK6PAD\\SQLEXPRESS:1433;databaseName=QLBH102",
-                    "sa", "888888");
+            con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=QLBH102",
+                    "sa", "giang1999");
 
             String sql = "select * from SANPHAM where Delete_at is null";
 
